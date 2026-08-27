@@ -1,0 +1,97 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5323 >>
+stream
+0.290 0.565 0.851 rg 0.00 784.00 612.00 8.00 re f
+BT /F2 24 Tf 0.10 0.16 0.27 rg 56.00 730.00 Td (JOHN MURENGA BUNDI) Tj ET
+BT /F1 12.5 Tf 0.290 0.565 0.851 rg 56.00 709.00 Td (Computer Science Diploma Student) Tj ET
+BT /F1 9.5 Tf 0.42 0.46 0.52 rg 56.00 692.00 Td (Email: bundij69@gmail.com   |   Phone: 074671206   |   Location: Kenya) Tj ET
+BT /F1 9.5 Tf 0.42 0.46 0.52 rg 56.00 679.00 Td (GitHub: [Your GitHub URL]   |   LinkedIn: [Your LinkedIn URL]) Tj ET
+0.290 0.565 0.851 rg 56.00 665.00 500.00 2.50 re f
+BT /F2 12.5 Tf 0.10 0.16 0.27 rg 56.00 649.00 Td (PROFESSIONAL SUMMARY) Tj ET
+0.290 0.565 0.851 rg 56.00 642.00 500.00 1.40 re f
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 626.00 Td (Dedicated and passionate Computer Science diploma student at Ndia Technical and Vocational College) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 612.00 Td (with a strong foundation in web development, database management, and graphic design. Skilled at) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 598.00 Td (building functional, user-friendly applications and creating visually compelling designs. Seeking) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 584.00 Td (opportunities to apply technical skills and creativity to solve real-world problems.) Tj ET
+BT /F2 12.5 Tf 0.10 0.16 0.27 rg 56.00 554.00 Td (SKILLS) Tj ET
+0.290 0.565 0.851 rg 56.00 547.00 500.00 1.40 re f
+BT /F2 10 Tf 0.10 0.16 0.27 rg 56.00 531.00 Td (Web Development:) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 149.60 531.00 Td (HTML5, CSS3, JavaScript, React, PHP) Tj ET
+BT /F2 10 Tf 0.10 0.16 0.27 rg 56.00 516.00 Td (Databases:) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 116.00 516.00 Td (MySQL, PostgreSQL) Tj ET
+BT /F2 10 Tf 0.10 0.16 0.27 rg 56.00 501.00 Td (Design:) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 99.20 501.00 Td (Graphic Design, UI/UX, Adobe Photoshop, Adobe Illustrator) Tj ET
+BT /F2 10 Tf 0.10 0.16 0.27 rg 56.00 486.00 Td (Tools:) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 93.60 486.00 Td (Git, GitHub, Bootstrap) Tj ET
+BT /F2 12.5 Tf 0.10 0.16 0.27 rg 56.00 455.00 Td (PROJECTS) Tj ET
+0.290 0.565 0.851 rg 56.00 448.00 500.00 1.40 re f
+BT /F2 10.5 Tf 0.10 0.16 0.27 rg 56.00 432.00 Td (Restaurant Point of Sale System) Tj ET
+BT /F2 8.5 Tf 0.290 0.565 0.851 rg 266.00 432.00 Td (\(Flagship Project\)) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 417.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 417.00 Td (Full-featured POS system built with PHP and MySQL) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 403.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 403.50 Td (Order management, inventory tracking, and sales reporting) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 390.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 390.00 Td (PDF invoice generation with role-based authentication \(cashier/admin\)) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 376.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 376.50 Td (Designed for small to medium restaurants to streamline operations) Tj ET
+BT /F2 10.5 Tf 0.10 0.16 0.27 rg 56.00 355.00 Td (School Fee Management System) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 340.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 340.00 Td (Comprehensive billing system for tracking student fees) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 326.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 326.50 Td (Automated payment receipts and real-time balance monitoring) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 313.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 313.00 Td (Outstanding balance alerts and financial report generation) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 299.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 299.50 Td (Built with PHP and MySQL for efficient data management) Tj ET
+BT /F2 10.5 Tf 0.10 0.16 0.27 rg 56.00 278.00 Td (Graphic Design Portfolio) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 263.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 263.00 Td (School marketing posters \(Madaraka Day celebration\)) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 249.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 249.50 Td (Open Day recruitment and promotional materials) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 236.00 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 236.00 Td (Branding and print design using Adobe Photoshop & Illustrator) Tj ET
+BT /F1 9.8 Tf 0.290 0.565 0.851 rg 63.00 222.50 Td (\225) Tj ET
+BT /F1 9.8 Tf 0.15 0.18 0.22 rg 72.00 222.50 Td (Professional designs for both digital and print formats) Tj ET
+BT /F2 12.5 Tf 0.10 0.16 0.27 rg 56.00 193.00 Td (EDUCATION) Tj ET
+0.290 0.565 0.851 rg 56.00 186.00 500.00 1.40 re f
+BT /F2 10.5 Tf 0.10 0.16 0.27 rg 56.00 170.00 Td (Computer Science Diploma \(In Progress\)) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 156.00 Td (Ndia Technical and Vocational College, Kenya) Tj ET
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 142.00 Td (Relevant Coursework: Web Development, Database Design, Programming Logic, UI/UX Design, Networking) Tj ET
+BT /F2 12.5 Tf 0.10 0.16 0.27 rg 56.00 112.00 Td (REFERENCES) Tj ET
+0.290 0.565 0.851 rg 56.00 105.00 500.00 1.40 re f
+BT /F1 10 Tf 0.15 0.18 0.22 rg 56.00 89.00 Td (Available upon request.) Tj ET
+0.78 0.86 0.95 rg 56.00 46.00 500.00 0.80 re f
+BT /F1 8.5 Tf 0.42 0.46 0.52 rg 257.13 32.00 Td (John Murenga Bundi \267 CV) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000005664 00000 n 
+0000005761 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+5863
+%%EOF

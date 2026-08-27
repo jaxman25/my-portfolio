@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of [Your Name] — Computer Science Diploma student specializing in web development, databases, and graphic design." />
+  <title>John Bundi | Computer Science Portfolio</title>
+
+  <!-- Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Flag JS availability ASAP: scroll-reveal styles only apply when JS runs,
+       so content is ALWAYS visible even if script.js fails to load. -->
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="logo">JOHN<span class="logo-accent">.</span>BUNDI</a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Dark / light mode toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== SECTION 1: HERO / HOME ===================== -->
+  <section id="home" class="hero">
+    <!-- Animated geometric background shapes -->
+    <div class="hero-bg" aria-hidden="true">
+      <span class="shape shape-1"></span>
+      <span class="shape shape-2"></span>
+      <span class="shape shape-3"></span>
+      <span class="shape shape-4"></span>
+      <span class="shape shape-5"></span>
+      <span class="shape shape-6"></span>
+    </div>
+
+    <div class="hero-wrapper">
+      <!-- Left: text content -->
+      <div class="hero-content reveal">
+        <p class="hero-greeting">Hello, I'm <span class="highlight">JOHN BUNDI</span></p>
+        <h1 class="hero-title">Computer Science<br />Diploma Student</h1>
+
+        <!-- Typewriter tagline (filled by script.js) -->
+        <p class="hero-tagline">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
+
+        <p class="hero-subtext">
+          Passionate about web development, databases, and graphic design —
+          turning ideas into functional digital solutions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-code"></i> View My Work
+          </a>
+          <a href="assets/cv-placeholder.pdf" download class="btn btn-outline">
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: profile image -->
+      <div class="hero-photo reveal">
+        <div class="hero-photo-inner">
+          <div class="hero-avatar">
+            <img src="assets/me.png" alt="John Murenga Bundi — Profile Photo" />
+          </div>
+          <div class="hero-avatar-ring" aria-hidden="true"></div>
+          <!-- Floating availability badge -->
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Available for Work
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll to About section">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Wave divider between hero and about -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 C320,120 520,20 720,60 C920,100 1120,30 1440,70 L1440,120 L0,120 Z" fill="var(--bg-section-alt)" />
+    </svg>
+  </div>
+
+  <!-- ===================== SECTION 2: ABOUT ME ===================== -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2 class="section-title reveal">About <span class="highlight">Me</span></h2>
+
+      <div class="about-grid">
+        <!-- Left column: headshot placeholder -->
+        <div class="about-photo reveal">
+          <div class="avatar-circle">
+            <img src="assets/profile.png" alt="Profile Photo" />
+          </div>
+          <div class="avatar-ring" aria-hidden="true"></div>
+        </div>
+
+        <!-- Right column: bio + stats -->
+        <div class="about-text reveal">
+          <h3>A passionate builder of digital solutions</h3>
+          <p>
+            I am currently pursuing a <strong>Computer Science Diploma</strong>, building a strong
+            foundation in software development, database management, and design thinking.
+            My journey began with curiosity about how things work — and grew into a drive
+            to build things that work beautifully.
+          </p>
+          <p>
+            I specialize in turning complex problems into clean, functional solutions.
+            I have hands-on experience shipping real-world systems like a
+            <strong>Restaurant POS application</strong> and a <strong>School Billing System</strong>,
+            alongside a growing graphic design portfolio. My interests lie in
+            <strong>full-stack development</strong> and <strong>UI/UX design</strong>.
+          </p>
+          <blockquote>
+            “I believe great software is built at the intersection of logic, creativity,
+            and user experience.”
+          </blockquote>
+
+          <!-- Stats counters -->
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Designs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3: SKILLS ===================== -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2 class="section-title reveal">My Tech Stack &amp; <span class="highlight">Design Tools</span></h2>
+      <p class="section-subtitle reveal">A blend of engineering and creativity across three core areas.</p>
+
+      <div class="skills-grid">
+        <!-- Category 1: Front-End Development -->
+        <div class="skill-card reveal">
+          <h3 class="skill-category"><i class="fa-brands fa-html5"></i> Front-End Development</h3>
+          <div class="skill">
+            <div class="skill-info"><span>HTML5</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="90"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>CSS3</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>React</span><span>70%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div>
+          </div>
+        </div>
+
+        <!-- Category 2: Back-End & Databases -->
+        <div class="skill-card reveal">
+          <h3 class="skill-category"><i class="fa-solid fa-database"></i> Back-End &amp; Databases</h3>
+          <div class="skill">
+            <div class="skill-info"><span>Python</span><span>80%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>MySQL</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>PostgreSQL</span><span>75%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="75"></div></div>
+          </div>
+        </div>
+
+        <!-- Category 3: Design & Tools -->
+        <div class="skill-card reveal">
+          <h3 class="skill-category"><i class="fa-solid fa-palette"></i> Design &amp; Tools</h3>
+          <div class="skill">
+            <div class="skill-info"><span>Graphic Design</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>UI/UX Design</span><span>75%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="75"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-info"><span>Git &amp; GitHub</span><span>80%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 4: PROJECTS ===================== -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section-title reveal">My <span class="highlight">Projects</span></h2>
+      <p class="section-subtitle reveal">Real-world systems and creative designs — from code to canvas.</p>
+
+      <div class="projects-grid">
+        <!-- PROJECT 1: FLAGSHIP — Restaurant POS System -->
+        <article class="project-card flagship reveal">
+          <div class="flagship-badge"><i class="fa-solid fa-star"></i> FLAGSHIP PROJECT</div>
+          <div class="project-image">
+            <img
+              src="assets/Restaurant POS.png"
+              alt="Screenshot of the Restaurant Point of Sale system dashboard showing order management"
+              loading="lazy"
+            />
+            <div class="image-overlay"><span>Restaurant Point of Sale System</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Web Development · Database Design</span>
+            <h3>Restaurant Point of Sale System</h3>
+            <p>
+              A full-featured POS system for restaurants built with PHP and MySQL.
+              Includes order management, inventory tracking, sales reporting, and invoice
+              generation. Designed for small to medium restaurants to streamline daily operations.
+            </p>
+            <ul class="project-features">
+              <li>Order entry &amp; management</li>
+              <li>Real-time inventory updates</li>
+              <li>Sales reports &amp; analytics</li>
+              <li>PDF invoice generation</li>
+              <li>User authentication (cashier/admin roles)</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Python Flask</span><span class="tag">postgreSQL</span><span class="tag">HTML</span>
+              <span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="pos">
+              View Case Study
+            </button>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: School Billing System -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img
+              src="assets/Dashboard.png"
+              alt="Screenshot of the School Fee Management System showing student fee records"
+              loading="lazy"
+            />
+            <div class="image-overlay"><span>School Fee Management System</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Database Management · Web App</span>
+            <h3>School Fee Management System</h3>
+            <p>
+              A comprehensive school billing system that tracks student fees, generates
+              payment receipts, and provides real-time balance tracking. Built to help
+              schools manage finances efficiently.
+            </p>
+            <ul class="project-features">
+              <li>Student registration &amp; fee structure</li>
+              <li>Payment tracking &amp; receipts</li>
+              <li>Outstanding balance alerts</li>
+              <li>Monthly/yearly financial reports</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">HTML</span>
+              <span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="billing">
+              View Case Study
+            </button>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Madaraka Day Poster -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img
+              src="assets/HAPPY MADARAKA DAY.png"
+              alt="Madaraka Day school celebration poster featuring Kenyan national colors"
+              loading="lazy"
+            />
+            <div class="image-overlay"><span>Madaraka Day School Campaign Poster</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Graphic Design · Branding</span>
+            <h3>Madaraka Day School Campaign Poster</h3>
+            <p>
+              A visually striking poster designed for a school's Madaraka Day celebration.
+              Combines Kenyan national colors with modern design principles to create an
+              engaging and patriotic promotional piece.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Graphic Design</span><span class="tag">Adobe Illustrator</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="madaraka">
+              View Design
+            </button>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: Open Day Marketing Poster -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img
+              src="assets/School-poster-PNG.png"
+              alt="School open day recruitment poster with clean layout and vibrant colors"
+              loading="lazy"
+            />
+            <div class="image-overlay"><span>School Open Day Marketing Poster</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Graphic Design · Print Design</span>
+            <h3>School Open Day Marketing Poster</h3>
+            <p>
+              A professional poster for school recruitment and open day events. Designed to
+              attract prospective students and parents with clean layout, vibrant colors,
+              and clear information hierarchy.
+            </p>
+            <div class="tech-tags">
+              <span class="tag">Graphic Design</span><span class="tag">GIMP</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="openday">
+              View Design
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASE STUDY MODAL ===================== -->
+  <div class="modal" id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close case study">&times;</button>
+      <div class="modal-image" id="modal-image-trigger" role="button" tabindex="0" aria-label="View full image">
+        <img id="modal-image" src="" alt="" />
+        <span class="modal-image-zoom"><i class="fa-solid fa-expand"></i></span>
+      </div>
+      <span class="modal-category" id="modal-category"></span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size image">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- ===================== SECTION 5: CONTACT ===================== -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title reveal">Let's <span class="highlight">Connect</span></h2>
+      <p class="section-subtitle reveal">Have a question or want to collaborate? Reach out!</p>
+
+      <div class="contact-grid">
+        <!-- Contact form (front-end only: shows a thank-you message) -->
+        <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/moeqangz" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-success" id="form-success" hidden>
+            <i class="fa-solid fa-circle-check"></i>
+            Thank you! Your message has been sent. I'll get back to you soon.
+          </p>
+        </form>
+
+        <!-- Contact info panel -->
+        <aside class="contact-info reveal">
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:bundij69@gmail.com">bundij69@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h4>Location</h4>
+              <p>Kenya</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+254746712306">+254746712306</a>
+            </div>
+          </div>
+          <div class="info-item contact-socials">
+            <h4>Follow Me</h4>
+            <div class="social-icons">
+              <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 6: FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="#home">Home</a><span>·</span>
+        <a href="#about">About</a><span>·</span>
+        <a href="#skills">Skills</a><span>·</span>
+        <a href="#projects">Projects</a><span>·</span>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="copyright">© 2026 John Bundi · Built with <i class="fas fa-heart"></i> by JAX Tech Solutions</p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
