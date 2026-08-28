@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of [Your Name] — Computer Science Diploma student specializing in web development, databases, and graphic design." />
+  <meta name="description" content="Portfolio of John Bundi — Full-Stack Web Developer and Database Developer specializing in web development, databases, and graphic design." />
   <meta name="google-site-verification" content="czVYfttnevsWahgo0duT3TjFIBD0jcbk6KU2Rky4tOA" />
-  <title>John Bundi | Computer Science Portfolio</title>
+  <title>John Bundi | Full-Stack Web Developer Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <!-- Fonts: Poppins (headings) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,20 +33,28 @@
   <!-- ===================== NAVBAR ===================== -->
   <header class="navbar" id="navbar">
     <nav class="nav-container">
-      <a href="#home" class="logo">JOHN<span class="logo-accent">.</span>BUNDI</a>
+      <a href="#home" class="logo"><img src="assets/favicon.svg" alt="" class="logo-icon" />JOHN<span class="logo-accent">.</span>BUNDI</a>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></a></li>
+        <li><a href="#about" class="nav-link"><i class="fa-solid fa-user nav-icon"></i><span>About</span></a></li>
+        <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code nav-icon"></i><span>Skills</span></a></li>
+        <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap nav-icon"></i><span>Education</span></a></li>
+        <li><a href="#services" class="nav-link"><i class="fa-solid fa-briefcase nav-icon"></i><span>Services</span></a></li>
+        <li><a href="#projects" class="nav-link"><i class="fa-solid fa-folder nav-icon"></i><span>Projects</span></a></li>
+        <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope nav-icon"></i><span>Contact</span></a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
+            <span class="theme-label">Theme</span>
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </li>
       </ul>
 
       <div class="nav-actions">
-        <!-- Dark / light mode toggle -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
-          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        <!-- Dark / light mode toggle (desktop) -->
+        <button class="theme-toggle theme-toggle--desktop" id="theme-toggle-desktop" aria-label="Toggle dark / light mode">
+          <i class="fa-solid fa-moon"></i>
         </button>
 
         <!-- Hamburger (mobile) -->
@@ -54,6 +63,9 @@
         </button>
       </div>
     </nav>
+
+    <!-- Overlay behind mobile sidebar -->
+    <div class="nav-overlay" id="nav-overlay"></div>
   </header>
 
   <!-- ===================== SECTION 1: HERO / HOME ===================== -->
@@ -72,7 +84,7 @@
       <!-- Left: text content -->
       <div class="hero-content reveal">
         <p class="hero-greeting">Hello, I'm <span class="highlight">JOHN BUNDI</span></p>
-        <h1 class="hero-title">Computer Science<br />Diploma Student</h1>
+        <h1 class="hero-title">Full-Stack Web Developer<br />| Database Developer</h1>
 
         <!-- Typewriter tagline (filled by script.js) -->
         <p class="hero-tagline">
@@ -186,69 +198,162 @@
   <!-- ===================== SECTION 3: SKILLS ===================== -->
   <section id="skills" class="section skills">
     <div class="container">
-      <h2 class="section-title reveal">My Tech Stack &amp; <span class="highlight">Design Tools</span></h2>
+      <h2 class="section-title reveal">My Tech Stack <span class="highlight">& Design Tools</span></h2>
       <p class="section-subtitle reveal">A blend of engineering and creativity across three core areas.</p>
 
       <div class="skills-grid">
         <!-- Category 1: Front-End Development -->
-        <div class="skill-card reveal">
-          <h3 class="skill-category"><i class="fa-brands fa-html5"></i> Front-End Development</h3>
-          <div class="skill">
-            <div class="skill-info"><span>HTML5</span><span>90%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="90"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>CSS3</span><span>85%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>React</span><span>70%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div>
+        <div class="skill-col reveal">
+          <h3 class="skill-heading"><i class="fa-brands fa-html5"></i> Front-End Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Responsive Design</span>
           </div>
         </div>
 
         <!-- Category 2: Back-End & Databases -->
-        <div class="skill-card reveal">
-          <h3 class="skill-category"><i class="fa-solid fa-database"></i> Back-End &amp; Databases</h3>
-          <div class="skill">
-            <div class="skill-info"><span>Python</span><span>80%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>MySQL</span><span>85%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>PostgreSQL</span><span>75%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="75"></div></div>
+        <div class="skill-col reveal">
+          <h3 class="skill-heading"><i class="fa-solid fa-database"></i> Back-End &amp; Databases</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">CRUD Operations</span>
           </div>
         </div>
 
         <!-- Category 3: Design & Tools -->
-        <div class="skill-card reveal">
-          <h3 class="skill-category"><i class="fa-solid fa-palette"></i> Design &amp; Tools</h3>
-          <div class="skill">
-            <div class="skill-info"><span>Graphic Design</span><span>85%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="85"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>UI/UX Design</span><span>75%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="75"></div></div>
-          </div>
-          <div class="skill">
-            <div class="skill-info"><span>Git &amp; GitHub</span><span>80%</span></div>
-            <div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div>
+        <div class="skill-col reveal">
+          <h3 class="skill-heading"><i class="fa-solid fa-palette"></i> Design &amp; Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Graphic Design</span>
+            <span class="skill-tag">UI/UX</span>
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">GIMP</span>
+            <span class="skill-tag">Adobe Illustrator</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SECTION 4: PROJECTS ===================== -->
+  <!-- ===================== SECTION 4: EDUCATION ===================== -->
+  <section id="education" class="section education">
+    <div class="container">
+      <h2 class="section-title reveal">My <span class="highlight">Education</span></h2>
+      <p class="section-subtitle reveal">The academic foundation behind my technical skills.</p>
+
+      <div class="education-card reveal">
+        <div class="edu-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="edu-content">
+          <span class="edu-badge">Currently Enrolled</span>
+          <h3>Diploma in Computer Science</h3>
+          <p class="edu-school">
+            <i class="fa-solid fa-building-columns"></i> Ndia Technical and Vocational College
+          </p>
+          <p class="edu-date">
+            <i class="fa-regular fa-calendar"></i> Expected Graduation: 2028
+          </p>
+          <div class="edu-coursework">
+            <span class="edu-coursework-label">Relevant Coursework</span>
+            <div class="coursework-tags">
+              <span class="tag">Software Development</span>
+              <span class="tag">Database Systems</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 5: SERVICES ===================== -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2 class="section-title reveal">What I <span class="highlight">Offer</span></h2>
+      <p class="section-subtitle reveal">4 core services — from websites to databases to design.</p>
+
+      <div class="services-grid">
+        <!-- Service 1: Business Websites -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3>Business Websites</h3>
+          <p>
+            Responsive, professional websites for businesses and organizations — from
+            landing pages to full multi-page sites with contact forms, galleries, and
+            SEO basics.
+          </p>
+          <ul class="service-highlights">
+            <li>Mobile-first responsive design</li>
+            <li>Contact forms &amp; lead capture</li>
+            <li>SEO-friendly structure</li>
+          </ul>
+        </div>
+
+        <!-- Service 2: Web Applications -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+          <h3>Web Applications</h3>
+          <p>
+            Custom dashboards, management systems, and interactive apps built with
+            clean backend architecture and modern frontend frameworks.
+          </p>
+          <ul class="service-highlights">
+            <li>Custom dashboards &amp; admin panels</li>
+            <li>Role-based access control</li>
+            <li>RESTful API integration</li>
+          </ul>
+        </div>
+
+        <!-- Service 3: Database Systems -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3>Database Systems</h3>
+          <p>
+            Relational database design, CRUD operations, and reporting pipelines using
+            MySQL and PostgreSQL — built for performance and data integrity.
+          </p>
+          <ul class="service-highlights">
+            <li>Schema design &amp; normalization</li>
+            <li>Complex queries &amp; joins</li>
+            <li>Automated reporting &amp; exports</li>
+          </ul>
+        </div>
+
+        <!-- Service 4: UI/UX & Graphic Design -->
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3>UI/UX &amp; Graphic Design</h3>
+          <p>
+            Pixel-perfect responsive interfaces, branding, and print design — from
+            Figma/Adobe XD to clean HTML/CSS with smooth interactions.
+          </p>
+          <ul class="service-highlights">
+            <li>Figma/XD to responsive code</li>
+            <li>Cross-browser compatibility</li>
+            <li>Branding &amp; print design (Adobe Illustrator, GIMP)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 6: PROJECTS ===================== -->
   <section id="projects" class="section projects">
     <div class="container">
       <h2 class="section-title reveal">My <span class="highlight">Projects</span></h2>
@@ -267,27 +372,64 @@
             <div class="image-overlay"><span>Restaurant Point of Sale System</span></div>
           </div>
           <div class="project-body">
-            <span class="project-category">Web Development · Database Design</span>
             <h3>Restaurant Point of Sale System</h3>
-            <p>
-              A full-featured POS system for restaurants built with PHP and MySQL.
-              Includes order management, inventory tracking, sales reporting, and invoice
-              generation. Designed for small to medium restaurants to streamline daily operations.
-            </p>
-            <ul class="project-features">
-              <li>Order entry &amp; management</li>
-              <li>Real-time inventory updates</li>
-              <li>Sales reports &amp; analytics</li>
-              <li>PDF invoice generation</li>
-              <li>User authentication (cashier/admin roles)</li>
-            </ul>
-            <div class="tech-tags">
-              <span class="tag">Python Flask</span><span class="tag">postgreSQL</span><span class="tag">HTML</span>
-              <span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-bullseye"></i> Problem</span>
+              <p>
+                Small to medium restaurants struggled with manual order tracking, fragmented
+                inventory management, and paper-based reporting — leading to errors,
+                wasted stock, and lost revenue.
+              </p>
             </div>
-            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="pos">
-              View Case Study
-            </button>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-lightbulb"></i> Solution</span>
+              <p>
+                A full-featured POS system that unifies order management, real-time
+                inventory tracking, sales analytics, and PDF invoice generation into
+                one streamlined web application.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-user-gear"></i> My Role</span>
+              <div class="role-list">
+                <span class="role-pill">Database Design</span>
+                <span class="role-pill">Backend (Flask)</span>
+                <span class="role-pill">Frontend</span>
+                <span class="role-pill">Auth &amp; RBAC</span>
+                <span class="role-pill">Reporting</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-layer-group"></i> Tech Stack</span>
+              <div class="tech-tags">
+                <span class="tag">Python Flask</span><span class="tag">PostgreSQL</span><span class="tag">HTML</span>
+                <span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-list-check"></i> Features</span>
+              <ul class="project-features">
+                <li>Order entry &amp; management</li>
+                <li>Real-time inventory updates</li>
+                <li>Sales reports &amp; analytics</li>
+                <li>PDF invoice generation</li>
+                <li>User authentication (cashier/admin roles)</li>
+              </ul>
+            </div>
+
+            <div class="project-links">
+              <a href="https://github.com/jaxman25/restaurant-pos" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+              <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="pos">
+                View Case Study
+              </button>
+            </div>
           </div>
         </article>
 
@@ -302,26 +444,62 @@
             <div class="image-overlay"><span>School Fee Management System</span></div>
           </div>
           <div class="project-body">
-            <span class="project-category">Database Management · Web App</span>
             <h3>School Fee Management System</h3>
-            <p>
-              A comprehensive school billing system that tracks student fees, generates
-              payment receipts, and provides real-time balance tracking. Built to help
-              schools manage finances efficiently.
-            </p>
-            <ul class="project-features">
-              <li>Student registration &amp; fee structure</li>
-              <li>Payment tracking &amp; receipts</li>
-              <li>Outstanding balance alerts</li>
-              <li>Monthly/yearly financial reports</li>
-            </ul>
-            <div class="tech-tags">
-              <span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">HTML</span>
-              <span class="tag">CSS</span><span class="tag">JavaScript</span>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-bullseye"></i> Problem</span>
+              <p>
+                Schools struggled with manual fee tracking, lost receipts, and no real-time
+                visibility into outstanding balances — making financial reporting slow
+                and error-prone.
+              </p>
             </div>
-            <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="billing">
-              View Case Study
-            </button>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-lightbulb"></i> Solution</span>
+              <p>
+                A comprehensive web-based billing system that handles student registration,
+                fee structure management, payment tracking, receipt generation, and
+                automated financial reporting in one place.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-user-gear"></i> My Role</span>
+              <div class="role-list">
+                <span class="role-pill">Database Design</span>
+                <span class="role-pill">Backend</span>
+                <span class="role-pill">Frontend</span>
+                <span class="role-pill">Reporting</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-layer-group"></i> Tech Stack</span>
+              <div class="tech-tags">
+                <span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">HTML</span>
+                <span class="tag">CSS</span><span class="tag">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="project-detail">
+              <span class="detail-label"><i class="fa-solid fa-list-check"></i> Features</span>
+              <ul class="project-features">
+                <li>Student registration &amp; fee structure</li>
+                <li>Payment tracking &amp; receipts</li>
+                <li>Outstanding balance alerts</li>
+                <li>Monthly/yearly financial reports</li>
+              </ul>
+            </div>
+
+            <div class="project-links">
+              <a href="https://github.com/jaxman25/school-billing-system" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+              <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="billing">
+                View Case Study
+              </button>
+            </div>
           </div>
         </article>
 
@@ -402,7 +580,7 @@
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
   </div>
 
-  <!-- ===================== SECTION 5: CONTACT ===================== -->
+  <!-- ===================== SECTION 7: CONTACT ===================== -->
   <section id="contact" class="section contact">
     <div class="container">
       <h2 class="section-title reveal">Let's <span class="highlight">Connect</span></h2>
@@ -474,13 +652,15 @@
     </div>
   </section>
 
-  <!-- ===================== SECTION 6: FOOTER ===================== -->
+  <!-- ===================== SECTION 8: FOOTER ===================== -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-links">
         <a href="#home">Home</a><span>·</span>
         <a href="#about">About</a><span>·</span>
         <a href="#skills">Skills</a><span>·</span>
+        <a href="#education">Education</a><span>·</span>
+        <a href="#services">Services</a><span>·</span>
         <a href="#projects">Projects</a><span>·</span>
         <a href="#contact">Contact</a>
       </div>
@@ -489,7 +669,7 @@
         <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
-      <p class="copyright">© 2026 John Bundi · Built with <i class="fas fa-heart"></i> by JAX Tech Solutions</p>
+      <p class="copyright">© 2026 John Bundi. All rights reserved.</p>
     </div>
   </footer>
 

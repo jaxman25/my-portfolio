@@ -10,7 +10,6 @@
    - Dark/light mode toggle (localStorage persistence)
    - Navbar scrolled state + active-link highlighting
    - Scroll reveal animations (IntersectionObserver)
-   - Skill progress bar fill on scroll
    - Stats counter animation
    - Typewriter hero tagline
    - Case study modal
@@ -28,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const themeToggle = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
+  const themeToggleDesktop = document.getElementById("theme-toggle-desktop");
+  const themeIconDesktop = themeToggleDesktop ? themeToggleDesktop.querySelector("i") : null;
   const navbar = document.getElementById("navbar");
   const sections = document.querySelectorAll("section[id]");
   const typewriterEl = document.getElementById("typewriter");
@@ -48,19 +49,56 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ----------------------------------------------------------
      1. MOBILE HAMBURGER MENU
      ---------------------------------------------------------- */
-  hamburger.addEventListener("click", () => {
-    const isOpen = navMenu.classList.toggle("open");
-    hamburger.classList.toggle("open", isOpen);
-    hamburger.setAttribute("aria-expanded", String(isOpen));
+  const navOverlay = document.getElementById("nav-overlay");
+
+  let savedScrollY = 0;
+
+  function closeMobileMenu() {
+    navMenu.classList.remove("open");
+    hamburger.classList.remove("open");
+    navOverlay.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll");
+    window.scrollTo(0, savedScrollY);
+  }
+
+  function openMobileMenu() {
+    savedScrollY = window.scrollY;
+    navMenu.classList.add("open");
+    hamburger.classList.add("open");
+    navOverlay.classList.add("active");
+    hamburger.setAttribute("aria-expanded", "true");
+    document.body.classList.add("no-scroll");
+  }
+
+  // Hamburger click
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (navMenu.classList.contains("open")) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 
-  // Close the drawer when a nav link is clicked
+  // Click overlay to close
+  navOverlay.addEventListener("click", closeMobileMenu);
+
+  // Click outside to close
+  document.addEventListener("click", (e) => {
+    if (navMenu.classList.contains("open")) {
+      const isHamburger = hamburger.contains(e.target);
+      const isNavMenu = navMenu.contains(e.target);
+      const isOverlay = navOverlay.contains(e.target);
+      if (!isHamburger && !isNavMenu && !isOverlay) {
+        closeMobileMenu();
+      }
+    }
+  });
+
+  // Close on nav link click
   navLinks.forEach((link) =>
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-      hamburger.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-    }),
+    link.addEventListener("click", closeMobileMenu),
   );
 
   /* ----------------------------------------------------------
@@ -79,8 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTheme(theme, save) {
     root.setAttribute("data-theme", theme);
-    themeIcon.className =
-      theme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    const iconClass = theme === "dark" ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    themeIcon.className = iconClass;
+    if (themeIconDesktop) themeIconDesktop.className = iconClass;
     if (save) localStorage.setItem(STORAGE_KEY, theme);
   }
 
@@ -89,10 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme(savedTheme || getSystemTheme(), false);
 
   // Toggle button: saves the choice so it persists across visits
-  themeToggle.addEventListener("click", () => {
+  function toggleTheme() {
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     applyTheme(next, true);
-  });
+  }
+  themeToggle.addEventListener("click", toggleTheme);
+  if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
 
   // Follow live OS changes unless the user has manually toggled
   window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
@@ -146,26 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((el) => revealObserver.observe(el));
 
     /* --------------------------------------------------------
-       5. SKILL PROGRESS BARS — fill from 0 to target on view
-       -------------------------------------------------------- */
-    const barObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const fill = entry.target;
-            fill.style.width = `${fill.dataset.progress}%`;
-            observer.unobserve(fill);
-          }
-        });
-      },
-      { threshold: 0.4 },
-    );
-    document
-      .querySelectorAll(".progress-fill")
-      .forEach((bar) => barObserver.observe(bar));
-
-    /* --------------------------------------------------------
-       6. STATS COUNTERS — count up when scrolled into view
+       5. STATS COUNTERS — count up when scrolled into view
        -------------------------------------------------------- */
     const statObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -199,9 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document
       .querySelectorAll(".reveal")
       .forEach((el) => el.classList.add("visible"));
-    document.querySelectorAll(".progress-fill").forEach((bar) => {
-      bar.style.width = `${bar.dataset.progress}%`;
-    });
     document.querySelectorAll(".stat-number").forEach((el) => {
       el.textContent = el.dataset.target;
     });
@@ -247,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alt: "Restaurant Point of Sale System dashboard screenshot",
       body: `
         <h4>Overview</h4>
-        <p>A full-featured POS system built with PHP and MySQL to streamline daily operations
+        <p>A full-featured POS system built with Python Flask and PostgreSQL to streamline daily operations
            for small-to-medium restaurants — covering orders, inventory, reporting, and billing.</p>
         <h4>My Role</h4>
         <p>Designed the normalized database schema, developed the front end with Bootstrap,
@@ -332,13 +351,13 @@ document.addEventListener("DOMContentLoaded", () => {
       modalImage.alt = study.alt;
       modalBody.innerHTML = study.body;
       modal.classList.add("open");
-      document.body.style.overflow = "hidden"; // prevent background scrolling
+      document.body.classList.add("no-scroll");
     });
   });
 
   function closeModal() {
     modal.classList.remove("open");
-    document.body.style.overflow = "";
+    document.body.classList.remove("no-scroll");
   }
 
   modalClose.addEventListener("click", closeModal);
@@ -356,9 +375,14 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.src = modalImage.src;
     lightboxImg.alt = modalImage.alt;
     lightbox.classList.add("open");
+    document.body.classList.add("no-scroll");
   }
   function closeLightbox() {
     lightbox.classList.remove("open");
+    // Only remove no-scroll if modal is also closed
+    if (!modal.classList.contains("open")) {
+      document.body.classList.remove("no-scroll");
+    }
   }
 
   modalImageTrigger.addEventListener("click", openLightbox);
