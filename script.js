@@ -230,7 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
      7. TYPEWRITER EFFECT — hero tagline
      ---------------------------------------------------------- */
   const phrases = [
-    "Building systems, solving problems, and designing experiences.",
+    "Building database-driven web applications with Python and Flask.",
+    "Creating practical systems for businesses and organizations.",
+    "Designing clean interfaces backed by solid data architecture.",
   ];
   let phraseIndex = 0;
   let charIndex = 0;
