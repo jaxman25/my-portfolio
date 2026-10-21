@@ -1,18 +1,20 @@
 /* ============================================================
-   PORTFOLIO INTERACTIVITY (v2)
+   PORTFOLIO INTERACTIVITY (v3 — redesigned site)
    Fixes: all element references are declared BEFORE any function
    that uses them (the previous version referenced scrollTopBtn
    inside onScroll() before its const declaration, which threw a
    ReferenceError and silently killed every feature below it).
 
    Features:
-   - Mobile hamburger menu
-   - Dark/light mode toggle (localStorage persistence)
+   - Mobile hamburger menu (Escape closes it)
+   - Dark/light mode toggle (light default, localStorage persistence)
    - Navbar scrolled state + active-link highlighting
    - Scroll reveal animations (IntersectionObserver)
-   - Stats counter animation
+   - Stats counters — values DERIVED from live page data (no hardcoded
+     numbers: counts project cards, unique project tech tags, dev
+     skill domains and design cards, so they update with the content)
    - Typewriter hero tagline
-   - Case study modal
+   - Case study modal (focus restore) + lightbox
    - Contact form thank-you message
    - Scroll-to-top button
    ============================================================ */
@@ -101,19 +103,19 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", closeMobileMenu),
   );
 
+  // Close on Escape key (keyboard accessibility)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("open")) {
+      closeMobileMenu();
+    }
+  });
+
   /* ----------------------------------------------------------
      2. DARK / LIGHT MODE TOGGLE
-        - Respects system preference on first visit
-        - localStorage overrides system preference once toggled
-        - Listens for OS theme changes when no manual override
+        - Light theme is the default on first visit (Section 14)
+        - localStorage overrides the default once toggled
      ---------------------------------------------------------- */
   const STORAGE_KEY = "portfolio-theme";
-
-  function getSystemTheme() {
-    return window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
-  }
 
   function applyTheme(theme, save) {
     root.setAttribute("data-theme", theme);
@@ -123,9 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (save) localStorage.setItem(STORAGE_KEY, theme);
   }
 
-  // Determine initial theme: saved override > system preference > dark
+  // Saved choice wins; otherwise start light.
   const savedTheme = localStorage.getItem(STORAGE_KEY);
-  applyTheme(savedTheme || getSystemTheme(), false);
+  applyTheme(savedTheme || "light", false);
 
   // Toggle button: saves the choice so it persists across visits
   function toggleTheme() {
@@ -134,13 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   themeToggle.addEventListener("click", toggleTheme);
   if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
-
-  // Follow live OS changes unless the user has manually toggled
-  window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      applyTheme(e.matches ? "light" : "dark", false);
-    }
-  });
 
   /* ----------------------------------------------------------
      3. NAVBAR: SCROLLED STATE + ACTIVE LINK + SCROLL-TOP VISIBILITY
@@ -154,6 +149,21 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => {
       if (scrollPos >= section.offsetTop - 120) currentId = section.id;
     });
+
+    // On tall viewports the final nav-linked section may never cross the
+    // offset threshold before the page ends — pin the highlight to it then.
+    if (scrollPos + window.innerHeight >= document.documentElement.scrollHeight - 8) {
+      const navIds = new Set(
+        Array.from(navLinks).map((l) => (l.getAttribute("href") || "").slice(1)),
+      );
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
+        if (navIds.has(sections[i].id)) {
+          currentId = sections[i].id;
+          break;
+        }
+      }
+    }
+
     navLinks.forEach((link) =>
       link.classList.toggle(
         "active",
@@ -166,6 +176,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll(); // set initial state
+
+  /* ----------------------------------------------------------
+     STATISTIC TARGETS — computed from the live page data.
+     Nothing is hardcoded: add or remove a project, tech tag,
+     skill domain or design card and the numbers follow.
+     ---------------------------------------------------------- */
+  const statTargets = (() => {
+    const uniqueTags = new Set(
+      Array.from(document.querySelectorAll(".project-card .tech-tags .tag"))
+        .map((tag) => tag.textContent.trim().toLowerCase())
+        .filter(Boolean),
+    );
+    return {
+      projects: document.querySelectorAll(".project-card").length,
+      technologies: uniqueTags.size,
+      domains: document.querySelectorAll(".skill-col[data-dev-domain]").length,
+      design: document.querySelectorAll(".design-card").length,
+    };
+  })();
 
   /* ----------------------------------------------------------
      4. SCROLL REVEAL ANIMATIONS
@@ -194,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const counter = entry.target;
-          const target = parseInt(counter.dataset.target, 10);
+          const target = statTargets[counter.dataset.stat] || 0;
           const duration = 1400;
           const start = performance.now();
 
@@ -222,12 +251,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .querySelectorAll(".reveal")
       .forEach((el) => el.classList.add("visible"));
     document.querySelectorAll(".stat-number").forEach((el) => {
-      el.textContent = el.dataset.target;
+      el.textContent = statTargets[el.dataset.stat] || 0;
     });
   }
 
   /* ----------------------------------------------------------
-     7. TYPEWRITER EFFECT — hero tagline
+     6. TYPEWRITER EFFECT — hero tagline
      ---------------------------------------------------------- */
   const phrases = [
     "Building database-driven web applications with Python and Flask.",
@@ -258,7 +287,10 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   /* ----------------------------------------------------------
-     8. CASE STUDY MODAL
+     7. CASE STUDY MODAL
+     Detailed problem/solution content lives here so the project
+     cards stay compact (Sections 6–9). All facts are taken from
+     the existing portfolio content — nothing invented.
      ---------------------------------------------------------- */
   const caseStudies = {
     pos: {
@@ -270,6 +302,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <h4>Overview</h4>
         <p>A full-featured POS system built with Python Flask and PostgreSQL to streamline daily operations
            for small-to-medium restaurants — covering orders, inventory, reporting, and billing.</p>
+        <h4>Problem</h4>
+        <p>Small and medium restaurants often rely on manual order tracking, paper-based
+           records, and disconnected inventory management. This leads to order errors,
+           stock discrepancies, and difficulty tracking daily sales.</p>
+        <h4>Solution</h4>
+        <p>A web-based point-of-sale system that centralizes order entry, tracks inventory
+           in real time, generates sales reports, and produces PDF invoices — all in one
+           application built for daily restaurant operations.</p>
         <h4>My Role</h4>
         <p>Designed the normalized database schema, developed the front end with Bootstrap,
            implemented role-based authentication (cashier/admin), and built PDF invoice generation.</p>
@@ -288,13 +328,21 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     billing: {
       category: "Database Management · Web App",
-      title: "School Fee Management System",
+      title: "School Billing System",
       image: "assets/Dashboard.png",
-      alt: "School Fee Management System dashboard screenshot",
+      alt: "School Billing System dashboard screenshot",
       body: `
         <h4>Overview</h4>
         <p>A comprehensive billing platform that tracks student fees, generates payment
            receipts, and gives administrators real-time visibility into outstanding balances.</p>
+        <h4>Problem</h4>
+        <p>Schools tracking fees manually face lost receipts, no visibility into outstanding
+           balances, and time-consuming financial reporting — often relying on spreadsheets
+           that are hard to audit and maintain.</p>
+        <h4>Solution</h4>
+        <p>A web-based billing system that manages student registrations, fee structures,
+           payment tracking, receipt generation, and financial reporting in a single
+           centralized platform.</p>
         <h4>Key Features</h4>
         <ul>
           <li>Student registration &amp; flexible fee structures</li>
@@ -305,6 +353,34 @@ document.addEventListener("DOMContentLoaded", () => {
         <h4>Outcome</h4>
         <p>Replaced spreadsheet-based fee tracking with an auditable, centralized system,
            dramatically reducing manual bookkeeping time.</p>
+      `,
+    },
+    hospital: {
+      category: "Web Application · Database Design",
+      title: "Hospital Management System",
+      image: "assets/Dashboard.png",
+      alt: "Hospital Management System application dashboard screenshot",
+      body: `
+        <h4>Overview</h4>
+        <p>A web-based hospital management application designed to organize patient information,
+           support administrative workflows, and provide structured data management for
+           healthcare operations.</p>
+        <h4>Problem</h4>
+        <p>Healthcare facilities need organized systems to manage patient records, appointments,
+           and operational data without relying on fragmented paper records or disconnected
+           spreadsheets.</p>
+        <h4>Solution</h4>
+        <p>A centralized web application for patient information and administrative workflows,
+           built with Python and Flask on a PostgreSQL database, with HTML and CSS for
+           the interface.</p>
+        <h4>Technologies</h4>
+        <ul>
+          <li>Python</li>
+          <li>Flask</li>
+          <li>PostgreSQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
       `,
     },
     madaraka: {
@@ -343,10 +419,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   };
 
+  let lastFocused = null; // element to restore focus to when modal closes
+
   document.querySelectorAll(".case-study-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const study = caseStudies[btn.dataset.project];
       if (!study) return;
+      lastFocused = btn;
       modalCategory.textContent = study.category;
       modalTitle.textContent = study.title;
       modalImage.src = study.image;
@@ -354,12 +433,17 @@ document.addEventListener("DOMContentLoaded", () => {
       modalBody.innerHTML = study.body;
       modal.classList.add("open");
       document.body.classList.add("no-scroll");
+      modalClose.focus(); // keyboard users land on the close button
     });
   });
 
   function closeModal() {
     modal.classList.remove("open");
     document.body.classList.remove("no-scroll");
+    if (lastFocused) {
+      lastFocused.focus(); // return focus to the Case Study button
+      lastFocused = null;
+    }
   }
 
   modalClose.addEventListener("click", closeModal);
@@ -371,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------
-     8b. LIGHTBOX — full-screen image viewer
+     8. LIGHTBOX — full-screen image viewer
      ---------------------------------------------------------- */
   function openLightbox() {
     lightboxImg.src = modalImage.src;
@@ -404,8 +488,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------
-   9. CONTACT FORM — sends to Formspree + thank-you message
-   ---------------------------------------------------------- */
+     9. CONTACT FORM — sends to Formspree + thank-you message
+     ---------------------------------------------------------- */
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 

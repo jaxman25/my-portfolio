@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of John Bundi — Full-Stack Web Developer building business systems and web applications with Python, Flask, JavaScript, PostgreSQL, and MySQL." />
+  <meta name="description" content="John Bundi is a full-stack software developer building business systems and web applications with Python, Flask, JavaScript, PostgreSQL, and MySQL." />
   <meta name="google-site-verification" content="czVYfttnevsWahgo0duT3TjFIBD0jcbk6KU2Rky4tOA" />
   <title>John Bundi | Full-Stack Web Developer</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -12,11 +12,11 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="John Bundi | Full-Stack Web Developer" />
-  <meta property="og:description" content="Full-Stack Developer building business systems and web applications with Python, Flask, and modern databases." />
+  <meta property="og:description" content="Full-stack developer building business systems and web applications with Python, Flask, and PostgreSQL/MySQL databases." />
   <meta property="og:url" content="https://johnbundiportfolio.netlify.app/" />
   <meta property="og:image" content="https://johnbundiportfolio.netlify.app/assets/Restaurant%20POS.png" />
 
-  <!-- Fonts: Inter for everything -->
+  <!-- Font: Inter (single family for the whole site) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -38,12 +38,15 @@
 </head>
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
+  <!-- Accessibility: skip link (Section 26) -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===================== NAVBAR (Section 18) ===================== -->
   <header class="navbar" id="navbar">
     <nav class="nav-container">
       <a href="#home" class="logo">
         <img src="assets/favicon.svg" alt="" class="logo-icon" />
-        JOHN<span class="logo-accent">.</span>BUNDI
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
       </a>
 
       <ul class="nav-menu" id="nav-menu">
@@ -51,8 +54,8 @@
         <li><a href="#about" class="nav-link"><i class="fa-solid fa-user nav-icon"></i><span>About</span></a></li>
         <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code nav-icon"></i><span>Skills</span></a></li>
         <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group nav-icon"></i><span>Projects</span></a></li>
-        <li><a href="#design" class="nav-link"><i class="fa-solid fa-palette nav-icon"></i><span>Design</span></a></li>
         <li><a href="#services" class="nav-link"><i class="fa-solid fa-briefcase nav-icon"></i><span>Services</span></a></li>
+        <li><a href="#design" class="nav-link"><i class="fa-solid fa-palette nav-icon"></i><span>Design</span></a></li>
         <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope nav-icon"></i><span>Contact</span></a></li>
         <li class="nav-theme-item">
           <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
@@ -74,625 +77,654 @@
     <div class="nav-overlay" id="nav-overlay"></div>
   </header>
 
-  <!-- ===================== SECTION 1: HERO ===================== -->
-  <section id="home" class="hero">
-    <div class="hero-wrapper">
-      <div class="hero-content reveal">
-        <p class="hero-greeting">Hello, I'm <span class="highlight">JOHN BUNDI</span></p>
-        <h1 class="hero-title">Full-Stack Developer<br />Building Business Systems &amp; Web Applications</h1>
+  <main id="main" tabindex="-1">
 
-        <p class="hero-tagline">
-          <span id="typewriter"></span><span class="cursor">|</span>
-        </p>
+    <!-- ===================== SECTION 1: HERO (Section 3) ===================== -->
+    <section id="home" class="hero">
+      <div class="hero-wrapper">
+        <div class="hero-content reveal">
+          <p class="hero-greeting">Hello, I'm <span class="highlight">JOHN BUNDI</span></p>
+          <h1 class="hero-title">Full-Stack Developer<br />Building Business Systems &amp; Web Applications</h1>
 
-        <p class="hero-subtext">
-          I build practical, database-driven web applications using Python, Flask, JavaScript,
-          PostgreSQL, and MySQL — systems that handle real business operations like billing,
-          inventory, and reporting.
-        </p>
+          <p class="hero-tagline">
+            <span id="typewriter"></span><span class="cursor">|</span>
+          </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fa-solid fa-folder-open"></i> View My Projects
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <i class="fa-solid fa-paper-plane"></i> Contact Me
-          </a>
-          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-ghost">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
+          <p class="hero-subtext">
+            I build practical, database-driven web applications using Python, Flask, JavaScript,
+            PostgreSQL, MySQL, HTML, and CSS — systems that handle real business operations like
+            billing, inventory, and reporting.
+          </p>
 
-        <div class="hero-socials">
-          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-      </div>
-
-      <div class="hero-photo reveal">
-        <div class="hero-photo-inner">
-          <div class="hero-avatar">
-            <img src="assets/me.jpg" alt="John Murenga Bundi — Full-Stack Web Developer" />
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              View My Projects <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              Contact Me
+            </a>
+            <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-ghost">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <a href="#about" class="scroll-down" aria-label="Scroll to About section">
-      <i class="fa-solid fa-chevron-down"></i>
-    </a>
-  </section>
-
-  <!-- ===================== SECTION 2: ABOUT ===================== -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2 class="section-title reveal">About <span class="highlight">Me</span></h2>
-
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <div class="avatar-circle">
-            <img src="assets/profile.png" alt="John Bundi — Profile Photo" />
+          <div class="hero-socials">
+            <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
           </div>
         </div>
 
-        <div class="about-text reveal">
-          <h3>Building software that handles real operations</h3>
-          <p>
-            I'm a full-stack web developer focused on building database-driven applications
-            for businesses and organizations. My work centers on web applications that manage
-            real operational needs — student billing, restaurant operations, hospital record
-            management — where reliable data handling and clear interfaces matter.
-          </p>
-          <p>
-            My stack is practical and focused: Python and Flask for backend logic, JavaScript
-            for interactive frontends, and PostgreSQL or MySQL for structured data. I also
-            handle the full development cycle — from database schema design through frontend
-            implementation.
-          </p>
-          <p>
-            Beyond software development, I do graphic design work including branding, posters,
-            and promotional materials. Design supports my development work — helping me build
-            interfaces that are both functional and usable.
-          </p>
-
-          <!-- Dynamic statistics — preserved from existing implementation -->
-          <div class="stats">
-            <div class="stat">
-              <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Projects Built</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-target="20">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Design Works</span>
+        <div class="hero-photo reveal">
+          <div class="hero-photo-inner">
+            <div class="hero-avatar">
+              <img src="assets/me.jpg" alt="John Murenga Bundi — Full-Stack Web Developer" />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ===================== SECTION 3: SKILLS ===================== -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <h2 class="section-title reveal">Technical <span class="highlight">Skills</span></h2>
-      <p class="section-subtitle reveal">Technologies I use to build web applications and manage data.</p>
+      <a href="#about" class="scroll-down" aria-label="Scroll to About section">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
 
-      <div class="skills-grid">
-        <div class="skill-col reveal">
-          <h3 class="skill-heading"><i class="fa-solid fa-code"></i> Frontend Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Responsive Design</span>
-            <span class="skill-tag">Bootstrap</span>
+    <!-- ===================== STATS BAR (Sections 4 & 17) =====================
+         Values are generated at runtime by script.js from the actual page data
+         (project cards, skill domains, tech tags, design cards). No hardcoded
+         numbers in the markup — nothing to inflate. -->
+    <section class="stats-bar" aria-label="Portfolio statistics">
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number" data-stat="projects">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Software Projects</span>
           </div>
-        </div>
-
-        <div class="skill-col reveal">
-          <h3 class="skill-heading"><i class="fa-solid fa-server"></i> Backend Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Authentication</span>
+          <div class="stat">
+            <span class="stat-number" data-stat="technologies">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Technologies Used</span>
           </div>
-        </div>
-
-        <div class="skill-col reveal">
-          <h3 class="skill-heading"><i class="fa-solid fa-database"></i> Databases</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Database Design</span>
-            <span class="skill-tag">CRUD Operations</span>
-            <span class="skill-tag">Reporting</span>
+          <div class="stat">
+            <span class="stat-number" data-stat="domains">0</span>
+            <span class="stat-label">Development Domains</span>
           </div>
-        </div>
-
-        <div class="skill-col reveal">
-          <h3 class="skill-heading"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Workflow</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Command Line</span>
-          </div>
-        </div>
-
-        <div class="skill-col reveal">
-          <h3 class="skill-heading"><i class="fa-solid fa-pen-ruler"></i> Design Tools</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Adobe Illustrator</span>
-            <span class="skill-tag">GIMP</span>
-            <span class="skill-tag">UI/UX Design</span>
-            <span class="skill-tag">Graphic Design</span>
+          <div class="stat">
+            <span class="stat-number" data-stat="design">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Design Projects</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== SECTION 4: EDUCATION ===================== -->
-  <section id="education" class="section education">
-    <div class="container">
-      <h2 class="section-title reveal">Education</h2>
-      <p class="section-subtitle reveal">Academic foundation supporting my technical work.</p>
+    <!-- ===================== SECTION 2: ABOUT (Section 5) ===================== -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="section-label">About Me</p>
+            <h2 class="about-heading">I Build Practical Web Applications for Real Business Needs</h2>
+            <p>
+              I build database-driven web applications for businesses and organizations — systems
+              that handle real operational work like restaurant orders, student billing, and patient
+              records, where reliable data handling and clear interfaces matter.
+            </p>
+            <p>
+              My stack is practical and focused: Python and Flask for backend logic, JavaScript for
+              interactive frontends, and PostgreSQL or MySQL for structured data. I work through the
+              full development cycle — from database schema design through frontend implementation
+              and testing.
+            </p>
+            <p>
+              Alongside development, I take on graphic design work — branding, posters, and
+              promotional materials. It's a secondary skill that supports my development work by
+              keeping me focused on clear, usable interfaces.
+            </p>
+            <a href="#skills" class="text-link">Learn More About Me <span aria-hidden="true">→</span></a>
+          </div>
 
-      <div class="education-card reveal">
-        <div class="edu-icon">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <div class="edu-content">
-          <span class="edu-badge">Currently Enrolled</span>
-          <h3>Diploma in Computer Science</h3>
-          <p class="edu-school">
-            <i class="fa-solid fa-building-columns"></i> Ndia Technical and Vocational College
-          </p>
-          <p class="edu-date">
-            <i class="fa-regular fa-calendar"></i> Expected Graduation: 2028
-          </p>
-          <div class="edu-coursework">
-            <span class="edu-coursework-label">Relevant Coursework</span>
-            <div class="coursework-tags">
-              <span class="tag">Software Development</span>
-              <span class="tag">Database Systems</span>
-              <span class="tag">Web Development</span>
-              <span class="tag">Computer Networks</span>
-            </div>
+          <div class="capability-card reveal">
+            <ul class="capability-list">
+              <li class="capability-item">
+                <span class="cap-icon"><i class="fa-solid fa-server" aria-hidden="true"></i></span>
+                <div class="cap-body">
+                  <h3>Backend Development</h3>
+                  <p>Server-side logic with Python and Flask — authentication, user roles, and business rules.</p>
+                </div>
+              </li>
+              <li class="capability-item">
+                <span class="cap-icon"><i class="fa-solid fa-display" aria-hidden="true"></i></span>
+                <div class="cap-body">
+                  <h3>Web Applications</h3>
+                  <p>Responsive web apps for day-to-day operations: ordering, billing, and reporting.</p>
+                </div>
+              </li>
+              <li class="capability-item">
+                <span class="cap-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+                <div class="cap-body">
+                  <h3>Database Development</h3>
+                  <p>Schema design, queries, and reporting with PostgreSQL and MySQL.</p>
+                </div>
+              </li>
+              <li class="capability-item">
+                <span class="cap-icon"><i class="fa-solid fa-object-group" aria-hidden="true"></i></span>
+                <div class="cap-body">
+                  <h3>UI/UX &amp; Interface Design</h3>
+                  <p>Clear layouts and consistent interfaces that are easy to learn and use.</p>
+                </div>
+              </li>
+              <li class="capability-item">
+                <span class="cap-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
+                <div class="cap-body">
+                  <h3>Graphic Design</h3>
+                  <p>Branding, posters, and print materials — a secondary skill alongside my development work.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== SECTION 5: FEATURED PROJECTS ===================== -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2 class="section-title reveal">Featured <span class="highlight">Software Projects</span></h2>
-      <p class="section-subtitle reveal">Real applications I've built — from point-of-sale systems to billing platforms.</p>
+    <!-- ===================== SECTION 3: SKILLS (Section 11) ===================== -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <p class="section-label reveal">My Skills</p>
+        <h2 class="section-title reveal">Technologies &amp; Tools</h2>
+        <p class="section-subtitle reveal">Technologies I use to build web applications and digital solutions.</p>
 
-      <div class="projects-grid">
-        <!-- PROJECT 1: Restaurant POS System (Flagship) -->
-        <article class="project-card flagship reveal">
-          <div class="flagship-badge"><i class="fa-solid fa-star"></i> FLAGSHIP PROJECT</div>
-          <div class="project-image">
-            <img
-              src="assets/Restaurant POS.png"
-              alt="Restaurant Point of Sale System — Dashboard showing order management and sales overview"
-              loading="lazy"
-            />
-            <div class="image-overlay"><span>Restaurant Point of Sale System</span></div>
+        <div class="skills-grid">
+          <div class="skill-col reveal" data-dev-domain>
+            <span class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+            <h3 class="skill-heading">Frontend</h3>
+            <ul class="skill-list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Responsive Design</li>
+              <li>Bootstrap</li>
+            </ul>
           </div>
-          <div class="project-body">
-            <span class="project-category">Full-Stack Web Application</span>
-            <h3>Restaurant Point of Sale System</h3>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-bullseye"></i> Problem</span>
-              <p>
-                Small and medium restaurants often rely on manual order tracking, paper-based
-                records, and disconnected inventory management. This leads to order errors,
-                stock discrepancies, and difficulty tracking daily sales.
-              </p>
-            </div>
+          <div class="skill-col reveal" data-dev-domain>
+            <span class="skill-icon"><i class="fa-solid fa-server" aria-hidden="true"></i></span>
+            <h3 class="skill-heading">Backend</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>Flask</li>
+            </ul>
+          </div>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-lightbulb"></i> Solution</span>
-              <p>
-                A web-based point-of-sale system that centralizes order entry, tracks inventory
-                in real time, generates sales reports, and produces PDF invoices — all in one
-                application built for daily restaurant operations.
-              </p>
-            </div>
+          <div class="skill-col reveal" data-dev-domain>
+            <span class="skill-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+            <h3 class="skill-heading">Database</h3>
+            <ul class="skill-list">
+              <li>PostgreSQL</li>
+              <li>MySQL</li>
+              <li>Database Design</li>
+              <li>CRUD Operations</li>
+            </ul>
+          </div>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-user-gear"></i> What I Built</span>
-              <div class="role-list">
-                <span class="role-pill">Database Design</span>
-                <span class="role-pill">Backend (Flask)</span>
-                <span class="role-pill">Frontend</span>
-                <span class="role-pill">Authentication &amp; Roles</span>
-                <span class="role-pill">Reporting</span>
+          <div class="skill-col reveal">
+            <span class="skill-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span>
+            <h3 class="skill-heading">Tools</h3>
+            <ul class="skill-list">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+
+          <div class="skill-col reveal">
+            <span class="skill-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></span>
+            <h3 class="skill-heading">Design</h3>
+            <ul class="skill-list">
+              <li>Adobe Illustrator</li>
+              <li>GIMP</li>
+              <li>UI/UX Design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 4: EDUCATION (kept from existing site) ===================== -->
+    <section id="education" class="section education">
+      <div class="container">
+        <h2 class="section-title reveal">Education</h2>
+        <p class="section-subtitle reveal">Academic foundation supporting my technical work.</p>
+
+        <div class="education-card reveal">
+          <div class="edu-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="edu-content">
+            <span class="edu-badge">Currently Enrolled</span>
+            <h3>Diploma in Computer Science</h3>
+            <p class="edu-school">
+              <i class="fa-solid fa-building-columns"></i> Ndia Technical and Vocational College
+            </p>
+            <p class="edu-date">
+              <i class="fa-regular fa-calendar"></i> Expected Graduation: 2028
+            </p>
+            <div class="edu-coursework">
+              <span class="edu-coursework-label">Relevant Coursework</span>
+              <div class="coursework-tags">
+                <span class="tag">Software Development</span>
+                <span class="tag">Database Systems</span>
+                <span class="tag">Web Development</span>
+                <span class="tag">Computer Networks</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-layer-group"></i> Technologies</span>
+    <!-- ===================== SECTION 5: FEATURED SOFTWARE PROJECTS (Sections 6-9) ===================== -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head-text">
+            <h2 class="section-title">Featured Software Projects</h2>
+            <p class="section-subtitle">Real-world applications built with Python, Flask, JavaScript, and databases.</p>
+          </div>
+          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="section-link">
+            View All Projects <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: Restaurant POS System -->
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img
+                src="assets/Restaurant POS.png"
+                alt="Restaurant Point of Sale System — order management and sales dashboard"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-body">
+              <h3>Restaurant Point of Sale System</h3>
+              <p class="project-desc">
+                A complete POS system for restaurants with order management, inventory tracking,
+                and reporting.
+              </p>
+
               <div class="tech-tags">
                 <span class="tag">Python</span>
                 <span class="tag">Flask</span>
                 <span class="tag">PostgreSQL</span>
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Bootstrap</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/jaxman25/restaurant-pos" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="pos">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
               </div>
             </div>
+          </article>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-list-check"></i> Key Features</span>
-              <ul class="project-features">
-                <li>Order entry and management workflow</li>
-                <li>Real-time inventory updates on sales</li>
-                <li>Sales reports and analytics dashboard</li>
-                <li>PDF invoice generation</li>
-                <li>User authentication with cashier and admin roles</li>
-              </ul>
+          <!-- PROJECT 2: School Billing System -->
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img
+                src="assets/Dashboard.png"
+                alt="School Billing System — student records and billing dashboard"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            <div class="project-links">
-              <a href="https://github.com/jaxman25/restaurant-pos" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                <i class="fa-brands fa-github"></i> View on GitHub
-              </a>
-              <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="pos">
-                <i class="fa-solid fa-file-lines"></i> Case Study
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 2: School Billing System -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img
-              src="assets/Dashboard.png"
-              alt="School Fee Management System — Dashboard showing student fee records and payment status"
-              loading="lazy"
-            />
-            <div class="image-overlay"><span>School Fee Management System</span></div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Database-Driven Web Application</span>
-            <h3>School Fee Management System</h3>
-
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-bullseye"></i> Problem</span>
-              <p>
-                Schools tracking fees manually face lost receipts, no visibility into outstanding
-                balances, and time-consuming financial reporting — often relying on spreadsheets
-                that are hard to audit and maintain.
+            <div class="project-body">
+              <h3>School Billing System</h3>
+              <p class="project-desc">
+                A school management system for handling student records, billing, payments,
+                and reports.
               </p>
-            </div>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-lightbulb"></i> Solution</span>
-              <p>
-                A web-based billing system that manages student registrations, fee structures,
-                payment tracking, receipt generation, and financial reporting in a single
-                centralized platform.
-              </p>
-            </div>
-
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-user-gear"></i> What I Built</span>
-              <div class="role-list">
-                <span class="role-pill">Database Design</span>
-                <span class="role-pill">Backend</span>
-                <span class="role-pill">Frontend</span>
-                <span class="role-pill">Reporting</span>
-              </div>
-            </div>
-
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-layer-group"></i> Technologies</span>
               <div class="tech-tags">
                 <span class="tag">Python</span>
+                <span class="tag">Flask</span>
                 <span class="tag">MySQL</span>
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/jaxman25/school-billing-system" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="billing">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
               </div>
             </div>
+          </article>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-list-check"></i> Key Features</span>
-              <ul class="project-features">
-                <li>Student registration and fee structure management</li>
-                <li>Payment tracking with receipt generation</li>
-                <li>Outstanding balance visibility</li>
-                <li>Monthly and yearly financial reports</li>
-              </ul>
+          <!-- PROJECT 3: Hospital Management System -->
+          <article class="project-card reveal">
+            <div class="project-image">
+              <img
+                src="assets/Dashboard.png"
+                alt="Hospital Management System — application dashboard"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            <div class="project-links">
-              <a href="https://github.com/jaxman25/school-billing-system" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                <i class="fa-brands fa-github"></i> View on GitHub
-              </a>
-              <button type="button" class="btn btn-primary btn-sm case-study-btn" data-project="billing">
-                <i class="fa-solid fa-file-lines"></i> Case Study
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 3: Hospital Management System -->
-        <article class="project-card reveal">
-          <div class="project-image">
-            <img
-              src="assets/Dashboard.png"
-              alt="Hospital Management System — Application dashboard interface"
-              loading="lazy"
-            />
-            <div class="image-overlay"><span>Hospital Management System</span></div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Web Application</span>
-            <h3>Hospital Management System</h3>
-
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-bullseye"></i> Problem</span>
-              <p>
-                Healthcare facilities need organized systems to manage patient records, appointments,
-                and operational data without relying on fragmented paper records or disconnected
-                spreadsheets.
+            <div class="project-body">
+              <h3>Hospital Management System</h3>
+              <p class="project-desc">
+                A hospital management system for managing patients, appointments, and records.
               </p>
-            </div>
 
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-lightbulb"></i> Solution</span>
-              <p>
-                A web-based hospital management application designed to organize patient information,
-                support administrative workflows, and provide structured data management for
-                healthcare operations.
-              </p>
-            </div>
-
-            <div class="project-detail">
-              <span class="detail-label"><i class="fa-solid fa-layer-group"></i> Technologies</span>
               <div class="tech-tags">
                 <span class="tag">Python</span>
-                <span class="tag">Web Framework</span>
-                <span class="tag">Database</span>
+                <span class="tag">Flask</span>
+                <span class="tag">PostgreSQL</span>
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
               </div>
-            </div>
 
-            <div class="project-links">
-              <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                <i class="fa-brands fa-github"></i> View on GitHub
-              </a>
+              <div class="project-links">
+                <a href="https://github.com/jaxman25?tab=repositories" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="hospital">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== SECTION 6: DESIGN WORK ===================== -->
-  <section id="design" class="section design">
-    <div class="container">
-      <h2 class="section-title reveal">Selected <span class="highlight">Design Work</span></h2>
-      <p class="section-subtitle reveal">Graphic design and branding — a secondary skill that supports my development work.</p>
-
-      <div class="design-grid">
-        <article class="design-card reveal">
-          <div class="design-image">
-            <img
-              src="assets/HAPPY MADARAKA DAY.png"
-              alt="Madaraka Day school celebration poster with Kenyan national colors"
-              loading="lazy"
-            />
+    <!-- ===================== SECTION 6: DESIGN WORK (Section 10 — secondary) ===================== -->
+    <section id="design" class="section design">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head-text">
+            <h2 class="section-title">Selected Design Work</h2>
+            <p class="section-subtitle">Posters, branding, and graphics for various projects and campaigns.</p>
           </div>
-          <div class="design-body">
-            <span class="design-category">Graphic Design · Branding</span>
-            <h3>Madaraka Day Campaign Poster</h3>
-            <p>
-              A poster designed for a school's Madaraka Day celebration, using Kenyan national
-              colors and clear typography to create an engaging promotional piece for both print
-              and digital sharing.
+          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="section-link">
+            View All Design Work <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="design-grid">
+          <article class="design-card design-card--wide reveal">
+            <div class="design-image">
+              <img
+                src="assets/HAPPY MADARAKA DAY.png"
+                alt="Madaraka Day school celebration poster with Kenyan national colors"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="design-body">
+              <span class="design-category">Graphic Design · Branding</span>
+              <h3>Madaraka Day Campaign Poster</h3>
+              <p>
+                A poster designed for a school's Madaraka Day celebration, using Kenyan national
+                colors and clear typography for print and digital sharing.
+              </p>
+              <div class="design-tags">
+                <span class="tag">Adobe Illustrator</span>
+                <span class="tag">Print Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="design-card design-card--wide reveal">
+            <div class="design-image">
+              <img
+                src="assets/School-poster-PNG.png"
+                alt="School Open Day marketing poster with clean layout and vibrant colors"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="design-body">
+              <span class="design-category">Graphic Design · Print Design</span>
+              <h3>School Open Day Poster</h3>
+              <p>
+                A recruitment poster for school open day events, designed with clear information
+                hierarchy for prospective students and parents.
+              </p>
+              <div class="design-tags">
+                <span class="tag">GIMP</span>
+                <span class="tag">Print Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="design-card design-card--wide reveal">
+            <div class="design-image">
+              <img
+                src="assets/School-poster-PNG.png"
+                alt="School Open Day marketing poster with clean layout and vibrant colors"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="design-body">
+              <span class="design-category">Graphic Design · Print Design</span>
+              <h3>School Open Day Poster</h3>
+              <p>
+                A recruitment poster for school open day events, designed with clear information
+                hierarchy for prospective students and parents.
+              </p>
+              <div class="design-tags">
+                <span class="tag">GIMP</span>
+                <span class="tag">Print Design</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 7: SERVICES (Section 12) ===================== -->
+    <section id="services" class="section services">
+      <div class="container">
+        <p class="section-label reveal">Services</p>
+        <h2 class="section-title reveal">What I Offer</h2>
+        <p class="section-subtitle reveal">Professional services to help you build and improve your digital presence.</p>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <span class="service-icon"><i class="fa-solid fa-desktop" aria-hidden="true"></i></span>
+            <h3>Web Application Development</h3>
+            <p>Build practical web applications for businesses and organizations.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="service-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>
+            <h3>Business Website Development</h3>
+            <p>Create responsive websites for businesses and personal brands.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="service-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+            <h3>Database Development</h3>
+            <p>Design and implement structured databases for your applications.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="service-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></span>
+            <h3>UI/UX and Interface Design</h3>
+            <p>Create clean, usable interfaces for web applications and products.</p>
+          </div>
+
+          <div class="service-card reveal">
+            <span class="service-icon"><i class="fa-solid fa-wrench" aria-hidden="true"></i></span>
+            <h3>Software Maintenance &amp; Improvements</h3>
+            <p>Fix issues, improve performance and maintain existing applications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 8: HOW I WORK (Section 13) ===================== -->
+    <section id="how-i-work" class="section how-i-work">
+      <div class="container">
+        <p class="section-label reveal">How I Work</p>
+        <h2 class="section-title reveal">My Development Process</h2>
+        <p class="section-subtitle reveal">A simple, effective process to turn your ideas into working solutions.</p>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <span class="step-number">01</span>
+            <h3 class="step-title">Understand</h3>
+            <p>Understand the client's requirements and problem.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span class="step-number">02</span>
+            <h3 class="step-title">Plan</h3>
+            <p>Define the structure, functionality and technical approach.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span class="step-number">03</span>
+            <h3 class="step-title">Build</h3>
+            <p>Develop the application using the right technologies.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span class="step-number">04</span>
+            <h3 class="step-title">Test</h3>
+            <p>Test functionality, responsiveness and usability.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span class="step-number">05</span>
+            <h3 class="step-title">Deliver</h3>
+            <p>Provide the finished solution and make necessary improvements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BANNER (Section 21) ===================== -->
+    <section class="cta-section" aria-label="Start a project">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-text">
+            <span class="cta-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span>
+            <div>
+              <h2>Have a project in mind?</h2>
+              <p>Tell me what you're trying to build and let's discuss how I can help.</p>
+            </div>
+          </div>
+          <div class="cta-actions">
+            <a href="#contact" class="btn btn-cta">
+              Start a Project <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="cta-links">
+              <a href="#contact">Contact Me</a>
+              <a href="https://github.com/jaxman25" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 9: CONTACT (preserved: Formspree + existing details) ===================== -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="section-subtitle reveal">Reach me directly by email or phone, or send a message using the form.</p>
+
+        <div class="contact-grid">
+          <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/moeqangz" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <p class="form-success" id="form-success" hidden>
+              <i class="fa-solid fa-circle-check"></i>
+              Thank you! Your message has been sent. I'll get back to you soon.
             </p>
-            <div class="design-tags">
-              <span class="tag">Adobe Illustrator</span>
-              <span class="tag">Print Design</span>
+          </form>
+
+          <aside class="contact-info reveal">
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:bundij69@gmail.com">bundij69@gmail.com</a>
+              </div>
             </div>
-          </div>
-        </article>
-
-        <article class="design-card reveal">
-          <div class="design-image">
-            <img
-              src="assets/School-poster-PNG.png"
-              alt="School Open Day marketing poster with clean layout and vibrant colors"
-              loading="lazy"
-            />
-          </div>
-          <div class="design-body">
-            <span class="design-category">Graphic Design · Print Design</span>
-            <h3>School Open Day Poster</h3>
-            <p>
-              A recruitment poster for school open day events. Designed with clear information
-              hierarchy and a professional color palette to attract prospective students and
-              parents.
-            </p>
-            <div class="design-tags">
-              <span class="tag">GIMP</span>
-              <span class="tag">Print Design</span>
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Kenya</p>
+              </div>
             </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTION 7: SERVICES ===================== -->
-  <section id="services" class="section services">
-    <div class="container">
-      <h2 class="section-title reveal">What I <span class="highlight">Offer</span></h2>
-      <p class="section-subtitle reveal">Services I provide for businesses, organizations, and clients.</p>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <i class="fa-solid fa-desktop"></i>
-          </div>
-          <h3>Web Application Development</h3>
-          <p>
-            Build practical web applications for businesses and organizations; dashboards,
-            management systems, and tools that handle real operational data.
-          </p>
-          <ul class="service-highlights">
-            <li>Custom business applications</li>
-            <li>Database-backed functionality</li>
-            <li>Role-based access where needed</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <i class="fa-solid fa-globe"></i>
-          </div>
-          <h3>Business Website Development</h3>
-          <p>
-            Create responsive websites for businesses and professional brands; from simple
-            informational sites to multi-page sites with contact forms and lead capture.
-          </p>
-          <ul class="service-highlights">
-            <li>Mobile-responsive design</li>
-            <li>Contact forms and lead capture</li>
-            <li>Clean, professional layouts</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <i class="fa-solid fa-database"></i>
-          </div>
-          <h3>Database Development</h3>
-          <p>
-            Design and implement structured databases for business applications using PostgreSQL
-            and MySQL; from schema design through queries and reporting.
-          </p>
-          <ul class="service-highlights">
-            <li>Schema design and normalization</li>
-            <li>Complex queries and joins</li>
-            <li>Data integrity and reporting</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <i class="fa-solid fa-pen-ruler"></i>
-          </div>
-          <h3>UI/UX &amp; Interface Design</h3>
-          <p>
-            Create clean, usable interfaces for web applications and digital products; focusing
-            on clarity, consistency, and practical user experience.
-          </p>
-          <ul class="service-highlights">
-            <li>Interface design for web apps</li>
-            <li>Visual hierarchy and layout</li>
-            <li>Brand and print design support</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <i class="fa-solid fa-wrench"></i>
-          </div>
-          <h3>Software Maintenance &amp; Improvements</h3>
-          <p>
-            Help improve, debug, and maintain existing applications; fixing issues, adding
-            features, and refining code where appropriate.
-          </p>
-          <ul class="service-highlights">
-            <li>Bug fixes and debugging</li>
-            <li>Feature additions</li>
-            <li>Code improvements</li>
-          </ul>
+            <div class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+254746712306">+254746712306</a>
+              </div>
+            </div>
+            <div class="info-item contact-socials">
+              <h4>Find Me Online</h4>
+              <div class="social-icons">
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===================== SECTION 8: HOW I WORK ===================== -->
-  <section id="how-i-work" class="section how-i-work">
-    <div class="container">
-      <h2 class="section-title reveal">How I <span class="highlight">Work</span></h2>
-      <p class="section-subtitle reveal">A straightforward process from understanding your needs to delivering working software.</p>
-
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <span class="step-number">01</span>
-          <h3 class="step-title">Understand</h3>
-          <p>
-            I start by understanding what you need, the problem you're solving, who will use
-            the software, and what success looks like for your business or organization.
-          </p>
-        </div>
-
-        <div class="process-step reveal">
-          <span class="step-number">02</span>
-          <h3 class="step-title">Plan</h3>
-          <p>
-            I define the structure, functionality, and technical approach before building,
-            including database design, feature scope, and how the pieces fit together.
-          </p>
-        </div>
-
-        <div class="process-step reveal">
-          <span class="step-number">03</span>
-          <h3 class="step-title">Build</h3>
-          <p>
-            I develop the application using appropriate technologies, writing clean backend
-            code, building functional frontends, and ensuring the database supports the
-            application's needs.
-          </p>
-        </div>
-
-        <div class="process-step reveal">
-          <span class="step-number">04</span>
-          <h3 class="step-title">Test</h3>
-          <p>
-            I test the functionality, check responsiveness across devices, and verify that
-            the application works as intended before delivery.
-          </p>
-        </div>
-
-        <div class="process-step reveal">
-          <span class="step-number">05</span>
-          <h3 class="step-title">Deliver</h3>
-          <p>
-            I deliver the finished solution and make necessary improvements based on feedback,
-            ensuring the software actually works for its intended purpose.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ===================== CASE STUDY MODAL ===================== -->
   <div class="modal" id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <button class="modal-close" id="modal-close" aria-label="Close case study">&times;</button>
       <div class="modal-image" id="modal-image-trigger" role="button" tabindex="0" aria-label="View full image">
-        <img id="modal-image" src="" alt="" />
+        <img id="modal-image" alt="" />
         <span class="modal-image-zoom"><i class="fa-solid fa-expand"></i></span>
       </div>
       <span class="modal-category" id="modal-category"></span>
@@ -704,97 +736,26 @@
   <!-- Lightbox overlay -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size image">
     <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <img class="lightbox-img" id="lightbox-img" alt="" />
   </div>
 
-  <!-- ===================== SECTION 9: CONTACT ===================== -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title reveal">Let's <span class="highlight">Connect</span></h2>
-      <p class="section-subtitle reveal">Have a project in mind? Tell me what you're trying to build and let's discuss how I can help.</p>
-
-      <div class="contact-grid">
-        <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/moeqangz" method="POST" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
-          <p class="form-success" id="form-success" hidden>
-            <i class="fa-solid fa-circle-check"></i>
-            Thank you! Your message has been sent. I'll get back to you soon.
-          </p>
-        </form>
-
-        <aside class="contact-info reveal">
-          <div class="info-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:bundij69@gmail.com">bundij69@gmail.com</a>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <h4>Location</h4>
-              <p>Kenya</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <h4>Phone</h4>
-              <a href="tel:+254746712306">+254746712306</a>
-            </div>
-          </div>
-          <div class="info-item contact-socials">
-            <h4>Find Me Online</h4>
-            <div class="social-icons">
-              <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== FOOTER (Section 17: logo left · copyright center · nav right) ===================== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-links">
-        <a href="#home">Home</a><span>·</span>
-        <a href="#about">About</a><span>·</span>
-        <a href="#skills">Skills</a><span>·</span>
-        <a href="#projects">Projects</a><span>·</span>
-        <a href="#services">Services</a><span>·</span>
-        <a href="#design">Design</a><span>·</span>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com/jaxman25" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/john-bundi-276aaa34b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://x.com/JohnBundi157336" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      </div>
+      <a href="#home" class="footer-logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" />
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
+      </a>
       <p class="copyright">© 2026 John Bundi. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#design">Design</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </footer>
 
