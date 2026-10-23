@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="All software projects by John Bundi: restaurant point of sale, school billing and hospital management systems built with Python, Flask, JavaScript and PostgreSQL/MySQL." />
+  <meta name="google-site-verification" content="czVYfttnevsWahgo0duT3TjFIBD0jcbk6KU2Rky4tOA" />
+  <title>Software Projects | John Bundi</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://johnbundiportfolio.netlify.app/projects.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Software Projects | John Bundi" />
+  <meta property="og:description" content="Restaurant point of sale, school billing and hospital management systems built with Python, Flask and PostgreSQL/MySQL." />
+  <meta property="og:url" content="https://johnbundiportfolio.netlify.app/projects.html" />
+  <meta property="og:image" content="https://johnbundiportfolio.netlify.app/assets/Restaurant%20POS.png" />
+
+  <!-- Font: Inter (body) + IBM Plex Sans (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="projects">
+
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Fixed back button: returns to the previous page, or the home page when the
+       visitor arrived directly. Sits in the page's top padding, so it is fixed
+       without shifting any content. -->
+  <button type="button" class="page-back" id="page-back" title="Go back">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>Back</span>
+  </button>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="index.html#home" class="logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" />
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html#home" class="nav-link"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about" class="nav-link"><i class="fa-solid fa-user nav-icon"></i><span>About</span></a></li>
+        <li><a href="index.html#skills" class="nav-link"><i class="fa-solid fa-code nav-icon"></i><span>Skills</span></a></li>
+        <li><a href="index.html#projects" class="nav-link active"><i class="fa-solid fa-layer-group nav-icon"></i><span>Projects</span></a></li>
+        <li><a href="index.html#services" class="nav-link"><i class="fa-solid fa-briefcase nav-icon"></i><span>Services</span></a></li>
+        <li><a href="index.html#design" class="nav-link"><i class="fa-solid fa-palette nav-icon"></i><span>Design</span></a></li>
+        <li><a href="index.html#contact" class="nav-link"><i class="fa-solid fa-envelope nav-icon"></i><span>Contact</span></a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
+            <span class="theme-label">Theme</span>
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle theme-toggle--desktop" id="theme-toggle-desktop" aria-label="Toggle dark / light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Overlay behind the mobile drawer: dims + blurs the page behind it. -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ===================== ALL SOFTWARE PROJECTS ===================== -->
+    <section id="projects" class="section projects page-section">
+      <div class="container">
+        <header class="page-head">
+          <p class="section-label">Portfolio</p>
+          <h1 class="page-title">All Software Projects</h1>
+          <p class="section-subtitle">
+            Three database-driven applications built with Python, Flask, JavaScript and
+            PostgreSQL or MySQL. Select a screenshot to read the case study.
+          </p>
+        </header>
+
+        <div class="projects-grid projects-grid--wide">
+          <!-- PROJECT 1: Restaurant POS System -->
+          <article class="project-card">
+            <button
+              type="button"
+              class="project-image"
+              data-project="pos"
+              aria-label="Open case study: Restaurant Point of Sale System"
+            >
+              <img
+                src="assets/Restaurant POS.png"
+                alt="Restaurant Point of Sale System showing order management and sales dashboard"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span>
+            </button>
+            <div class="project-body">
+              <h3>Restaurant Point of Sale System</h3>
+              <p class="project-desc">
+                A complete POS system for restaurants with order management, inventory tracking,
+                and reporting.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/jaxman25/restaurant-pos" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="pos">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: School Billing System -->
+          <article class="project-card">
+            <button
+              type="button"
+              class="project-image"
+              data-project="billing"
+              aria-label="Open case study: School Billing System"
+            >
+              <img
+                src="assets/Dashboard.png"
+                alt="School Billing System showing student records and billing dashboard"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span>
+            </button>
+            <div class="project-body">
+              <h3>School Billing System</h3>
+              <p class="project-desc">
+                A school management system for handling student records, billing, payments,
+                and reports.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/jaxman25/school-billing-system" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="billing">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Hospital Management System -->
+          <article class="project-card">
+            <button
+              type="button"
+              class="project-image"
+              data-project="hospital"
+              aria-label="Open case study: Hospital Management System"
+            >
+              <img
+                src="assets/hospital.png"
+                alt="Hospital Management System showing the application dashboard"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></span>
+            </button>
+            <div class="project-body">
+              <h3>Hospital Management System</h3>
+              <p class="project-desc">
+                A hospital management system for managing patients, appointments, and records.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/jaxman25/hospital-management-system" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  View Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-project="hospital">
+                  <i class="fa-solid fa-file-lines"></i> Case Study
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="page-actions">
+          <a href="index.html" class="btn btn-outline">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+          </a>
+          <a href="designs.html" class="btn btn-ghost">
+            <i class="fa-solid fa-palette"></i> Design Work
+          </a>
+          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== CASE STUDY MODAL ===================== -->
+  <div class="modal" id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close case study">&times;</button>
+      <div class="modal-image" id="modal-image-trigger" role="button" tabindex="0" aria-label="View full image">
+        <img id="modal-image" alt="" />
+        <span class="modal-image-zoom"><i class="fa-solid fa-expand"></i></span>
+      </div>
+      <span class="modal-category" id="modal-category"></span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size image">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" alt="" />
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html#home" class="footer-logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" />
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
+      </a>
+      <p class="copyright">© 2026 John Bundi. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#design">Design</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

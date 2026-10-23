@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="All graphic design work by John Bundi: campaign posters, brand posters and event infographics for schools, businesses and community campaigns." />
+  <meta name="google-site-verification" content="czVYfttnevsWahgo0duT3TjFIBD0jcbk6KU2Rky4tOA" />
+  <title>Design Work | John Bundi</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://johnbundiportfolio.netlify.app/designs.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Design Work | John Bundi" />
+  <meta property="og:description" content="Posters, brand work and event infographics for schools, businesses and community campaigns." />
+  <meta property="og:url" content="https://johnbundiportfolio.netlify.app/designs.html" />
+  <meta property="og:image" content="https://johnbundiportfolio.netlify.app/assets/HAPPY%20MADARAKA%20DAY.png" />
+
+  <!-- Font: Inter (body) + IBM Plex Sans (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<!-- data-page keys the nav item that stays highlighted on this page -->
+<body data-page="design">
+
+  <!-- Accessibility: skip link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Fixed back button: returns to the previous page, or the home page when the
+       visitor arrived directly. Sits in the page's top padding, so it is fixed
+       without shifting any content. -->
+  <button type="button" class="page-back" id="page-back" title="Go back">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>Back</span>
+  </button>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="index.html#home" class="logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" />
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html#home" class="nav-link"><i class="fa-solid fa-house nav-icon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about" class="nav-link"><i class="fa-solid fa-user nav-icon"></i><span>About</span></a></li>
+        <li><a href="index.html#skills" class="nav-link"><i class="fa-solid fa-code nav-icon"></i><span>Skills</span></a></li>
+        <li><a href="index.html#projects" class="nav-link"><i class="fa-solid fa-layer-group nav-icon"></i><span>Projects</span></a></li>
+        <li><a href="index.html#services" class="nav-link"><i class="fa-solid fa-briefcase nav-icon"></i><span>Services</span></a></li>
+        <li><a href="index.html#design" class="nav-link active"><i class="fa-solid fa-palette nav-icon"></i><span>Design</span></a></li>
+        <li><a href="index.html#contact" class="nav-link"><i class="fa-solid fa-envelope nav-icon"></i><span>Contact</span></a></li>
+        <li class="nav-theme-item">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light mode">
+            <span class="theme-label">Theme</span>
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle theme-toggle--desktop" id="theme-toggle-desktop" aria-label="Toggle dark / light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Overlay behind the mobile drawer: dims + blurs the page behind it. -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ===================== ALL DESIGN WORK ===================== -->
+    <section id="design" class="section design page-section">
+      <div class="container">
+        <header class="page-head">
+          <p class="section-label">Portfolio</p>
+          <h1 class="page-title">All Design Work</h1>
+          <p class="section-subtitle">
+            Posters, brand work and infographics made with Adobe Illustrator and GIMP.
+            Select an artwork to view it full size, or open its brief for the thinking
+            behind the design.
+          </p>
+        </header>
+
+        <div class="design-gallery">
+          <!-- DESIGN 1: Madaraka Day intake poster -->
+          <article class="design-item">
+            <button
+              type="button"
+              class="design-card design-card--poster"
+              title="View Madaraka Day poster full size"
+            >
+              <img
+                class="design-image"
+                src="assets/HAPPY MADARAKA DAY.png"
+                alt="Ndia Technical and Vocational College Madaraka Day intake poster in Kenyan national colours"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+            </button>
+            <div class="design-item-body">
+              <h3>Madaraka Day Intake Poster</h3>
+              <p>Patriotic intake poster for a technical college's Madaraka Day campaign.</p>
+              <div class="design-item-actions">
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-design="madaraka">
+                  <i class="fa-solid fa-file-lines"></i> Design Brief
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESIGN 2: Courses offered poster -->
+          <article class="design-item">
+            <button
+              type="button"
+              class="design-card design-card--poster"
+              title="View courses offered poster full size"
+            >
+              <img
+                class="design-image"
+                src="assets/School-poster-PNG.png"
+                alt="Ndia Technical and Vocational College courses offered poster with campus photographs"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+            </button>
+            <div class="design-item-body">
+              <h3>Courses Offered Poster</h3>
+              <p>Programme poster pairing the campus workshops with the full course list.</p>
+              <div class="design-item-actions">
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-design="courses">
+                  <i class="fa-solid fa-file-lines"></i> Design Brief
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESIGN 3: Green Harvest product poster -->
+          <article class="design-item">
+            <button
+              type="button"
+              class="design-card design-card--poster"
+              title="View Green Harvest poster full size"
+            >
+              <img
+                class="design-image"
+                src="assets/STARTUP COMPANY DESIGN-JPEG.jpg"
+                alt="Green Harvest fruit juice brand poster with product shot and feature badges"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+            </button>
+            <div class="design-item-body">
+              <h3>Green Harvest Product Poster</h3>
+              <p>Brand poster for a fruit juice range, built around the product shot.</p>
+              <div class="design-item-actions">
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-design="greenharvest">
+                  <i class="fa-solid fa-file-lines"></i> Design Brief
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESIGN 4: JAX Tech Solutions business card (front + back) -->
+          <article class="design-item design-item--pair">
+            <div class="design-pair">
+              <button
+                type="button"
+                class="design-card design-card--brand"
+                title="View business card front full size"
+              >
+                <img
+                  class="design-image"
+                  src="assets/business-card-1.png"
+                  alt="JAX Tech Solutions business card front with the company logo"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </button>
+              <button
+                type="button"
+                class="design-card design-card--brand"
+                title="View business card back full size"
+              >
+                <img
+                  class="design-image"
+                  src="assets/business-card-2.png"
+                  alt="JAX Tech Solutions business card back with contact details and QR code"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+              </button>
+            </div>
+            <div class="design-item-body">
+              <h3>JAX Tech Solutions Business Card</h3>
+              <p>Front and back of a business card for a web development and digital solutions service.</p>
+              <div class="design-item-actions">
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-design="businesscard">
+                  <i class="fa-solid fa-file-lines"></i> Design Brief
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- DESIGN 5: Talent Night 2026 infographic -->
+          <article class="design-item design-item--feature">
+            <button
+              type="button"
+              class="design-card design-card--tall"
+              title="View Talent Night 2026 infographic full size"
+            >
+              <img
+                class="design-image"
+                src="assets/Innovative_infographic.png"
+                alt="County Youth Council Talent Night 2026 infographic with event statistics and impact summary"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="media-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+            </button>
+            <div class="design-item-body">
+              <h3>Talent Night 2026 Infographic</h3>
+              <p>Event recap for the County Youth Council, turning the night's numbers into a shareable summary.</p>
+              <div class="design-item-actions">
+                <button type="button" class="btn btn-outline btn-sm case-study-btn" data-design="talentnight">
+                  <i class="fa-solid fa-file-lines"></i> Design Brief
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="page-actions">
+          <a href="index.html" class="btn btn-outline">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+          </a>
+          <a href="projects.html" class="btn btn-ghost">
+            <i class="fa-solid fa-layer-group"></i> Software Projects
+          </a>
+          <a href="https://github.com/jaxman25" target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== CASE STUDY MODAL ===================== -->
+  <div class="modal" id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close design brief">&times;</button>
+      <div class="modal-image" id="modal-image-trigger" role="button" tabindex="0" aria-label="View full image">
+        <img id="modal-image" alt="" />
+        <span class="modal-image-zoom"><i class="fa-solid fa-expand"></i></span>
+      </div>
+      <span class="modal-category" id="modal-category"></span>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full size image">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" alt="" />
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html#home" class="footer-logo">
+        <img src="assets/favicon.svg" alt="" class="logo-icon" />
+        <span class="logo-text">JOHN<span class="logo-accent">.</span>BUNDI</span>
+      </a>
+      <p class="copyright">© 2026 John Bundi. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#design">Design</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
