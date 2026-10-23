@@ -10,11 +10,11 @@ A professional portfolio website showcasing my Computer Science projects, techni
 
 | Hero Section | About Section | Projects |
 |:---:|:---:|:---:|
-| ![Hero](assets/screenshot-hero.png?v=1) | ![About](assets/screenshot-about.png?v=1) | ![Projects](assets/screenshot-projects.png?v=1) |
+| ![Hero](screenshots/desktop/light/01-hero.png) | ![About](screenshots/desktop/light/05-education.png) | ![Projects](screenshots/desktop/light/20-all-projects.png) |
 
 | Skills | Contact | Footer |
 |:---:|:---:|:---:|
-| ![Skills](assets/screenshot-skills.png?v=1) | ![Contact](assets/screenshot-contact.png?v=1) | ![Footer](assets/screenshot-footer.png?v=1) |
+| ![Skills](screenshots/desktop/light/04-skills.png) | ![Contact](screenshots/desktop/light/11-contact.png) | ![Footer](screenshots/desktop/light/12-footer.png) |
 
 ## 🚀 Features
 
